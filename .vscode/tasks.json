@@ -1,0 +1,129 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Django: Run Server",
+            "type": "shell",
+            "command": "source backend/venv/bin/activate && python backend/manage.py runserver",
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new"
+            },
+            "problemMatcher": [],
+            "runOptions": {
+                "instanceLimit": 1
+            }
+        },
+        {
+            "label": "Django: Run Migrations",
+            "type": "shell",
+            "command": "source backend/venv/bin/activate && python backend/manage.py migrate",
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Django: Create Superuser",
+            "type": "shell",
+            "command": "source backend/venv/bin/activate && python backend/manage.py createsuperuser",
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "new"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Django: Run Tests",
+            "type": "shell",
+            "command": "source backend/venv/bin/activate && python backend/manage.py test",
+            "group": "test",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Android: Build Debug",
+            "type": "shell",
+            "command": "./gradlew",
+            "args": ["assembleDebug"],
+            "options": {
+                "cwd": "${workspaceFolder}/android_app"
+            },
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Android: Build Release",
+            "type": "shell",
+            "command": "./gradlew",
+            "args": ["assembleRelease"],
+            "options": {
+                "cwd": "${workspaceFolder}/android_app"
+            },
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Android: Clean",
+            "type": "shell",
+            "command": "./gradlew",
+            "args": ["clean"],
+            "options": {
+                "cwd": "${workspaceFolder}/android_app"
+            },
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Android: Install Debug",
+            "type": "shell",
+            "command": "./gradlew",
+            "args": ["installDebug"],
+            "options": {
+                "cwd": "${workspaceFolder}/android_app"
+            },
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new"
+            },
+            "problemMatcher": [],
+            "dependsOn": "Android: Build Debug"
+        }
+    ]
+}
